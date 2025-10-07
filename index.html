@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporacion RN. Red Neural, C.A - Soluciones en Software, Neuromarketing y Computación Cuántica</title>
+    <meta name="description" content="Corporacion RN. Red Neural, C.A líder en desarrollo tecnológico con soluciones integradas de software personalizado, neuromarketing científico y computación cuántica aplicada.">
+    <meta name="keywords" content="desarrollo de software, neuromarketing, computación cuántica, inteligencia artificial, tecnología avanzada">
+    <meta name="author" content="Corporacion RN. Red Neural, C.A">
+    <link rel="icon" href="red.jpg" type="image/jpeg">
+    
+    <!-- Preload de fuentes -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap"></noscript>
+    
+    <style>
+    :root {
+        --blue-dark: #001a33;
+        --blue-medium: #0066cc;
+        --blue-light: #3399ff;
+        --emerald-dark: #00573D;
+        --emerald-medium: #008060;
+        --emerald-light: #00B388;
+        --teal-dark: #004D4D;
+        --teal-light: #008080;
+        --black: #1a1a1a;
+        --white: #f8f9fa;
+        --gray: #5a5a5a;
+        --silver: #e9ecef;
+        --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        --font-alt: 'Montserrat', var(--font-main);
+        --section-padding: 6rem 0;
+        --card-padding: 2.5rem;
+        --border-radius: 16px;
+        --box-shadow: 0 12px 24px -8px rgba(0,0,0,0.15);
+        --box-shadow-hover: 0 20px 40px -10px rgba(0,0,0,0.2);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--font-main);
+        color: var(--black);
+        background-color: var(--blue-dark);
+        line-height: 1.8;
+        font-size: 1.1rem;
+        overflow-x: hidden;
+        position: relative;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    /* Mejoras de accesibilidad */
+    a:focus, button:focus {
+        outline: 3px solid var(--emerald-medium);
+        outline-offset: 3px;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+
+    .stars {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+        will-change: transform;
+    }
+
+    .star {
+        position: absolute;
+        background-color: rgba(255,255,255,0.8);
+        border-radius: 50%;
+        animation: twinkle var(--duration) infinite ease-in-out;
+        opacity: var(--opacity);
+        will-change: transform, opacity;
+    }
+
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 1; }
+    }
+
+    .main-content {
+        background-color: rgba(248, 249, 250, 0.95);
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 50px rgba(0,0,0,0.3);
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    header {
+        background: linear-gradient(145deg, var(--blue-dark), var(--blue-medium));
+        color: var(--white);
+        padding: var(--section-padding);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+        animation: rotate 20s linear infinite;
+        z-index: 1;
+    }
+
+    .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .logo-container:hover {
+        transform: scale(1.03);
+    }
+
+    .logo-img {
+        height: 120px;
+        width: 120px;
+        margin-right: 25px;
+        filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+        transition: all 0.4s ease;
+        animation: pulse 3s infinite;
+        object-fit: contain;
+        alt: "Logo de Red Neural";
+    }
+
+    .logo-img:hover {
+        filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+    }
+
+    .logo-text {
+        font-family: var(--font-alt);
+        font-size: 4.2rem;
+        font-weight: 800;
+        display: inline-block;
+        text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        background: linear-gradient(to right, var(--white), var(--silver));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -1px;
+    }
+
+    .logo-text span {
+        color: var(--emerald-light);
+        -webkit-text-fill-color: var(--emerald-light);
+    }
+
+    .subtitle {
+        font-size: 1.4rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: rgba(255,255,255,0.95);
+        font-weight: 400;
+        line-height: 1.9;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        margin-bottom: 3rem;
+    }
+
+    .header-cta {
+        display: inline-block;
+        padding: 1.2rem 3rem;
+        background: linear-gradient(145deg, var(--emerald-medium), var(--emerald-light));
+        color: var(--white);
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        box-shadow: var(--box-shadow);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: none;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        animation: pulse 2.5s infinite;
+    }
+
+    .header-cta:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--box-shadow-hover);
+    }
+
+    .header-cta::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(145deg, var(--emerald-light), var(--emerald-medium));
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: -1;
+    }
+
+    .header-cta:hover::before {
+        opacity: 1;
+    }
+
+    .companies {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+        margin: -5rem auto 0;
+        padding: 0 2rem;
+        max-width: 1400px;
+        position: relative;
+        z-index: 3;
+    }
+
+    .company-card {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--box-shadow);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: 1px solid rgba(0,0,0,0.05);
+        position: relative;
+        animation: fadeIn 0.8s ease forwards;
+        opacity: 0;
+        --x: 50%;
+        --y: 50%;
+    }
+
+    .company-card:hover {
+        transform: translateY(-15px);
+        box-shadow: var(--box-shadow-hover);
+    }
+
+    .company-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at var(--x) var(--y), rgba(0,180,136,0.1) 0%, transparent 20%);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .company-card:hover::before {
+        opacity: 1;
+    }
+
+    .company-card:nth-child(1) { animation-delay: 0.1s; }
+    .company-card:nth-child(2) { animation-delay: 0.3s; }
+    .company-card:nth-child(3) { animation-delay: 0.5s; }
+
+    .rp2 .company-header {
+        background: var(--white);
+        color: var(--black);
+    }
+
+.rp3 .company-header {
+        background: var(--white);
+        color: var(--black);
+    }
+
+
+
+    .sqg .company-header {
+        background: linear-gradient(145deg, var(--teal-dark), var(--teal-light));
+        color: var(--white);
+    }
+
+    .company-header {
+        padding: 3rem 2.5rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .company-header::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+        opacity: 0;
+        transition: opacity 0.6s ease;
+    }
+
+    .company-card:hover .company-header::before {
+        opacity: 1;
+    }
+
+    .company-logo {
+        width: 110px;
+        height: 110px;
+        margin: 0 auto 1.5rem;
+        background-color: var(--white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        border: 3px solid rgba(255,255,255,0.3);
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .company-card:hover .company-logo {
+        transform: rotate(5deg) scale(1.1);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    }
+
+    .company-logo img {
+        width: 70%;
+        height: 70%;
+        object-fit: contain;
+    }
+
+    .company-name {
+        font-family: var(--font-alt);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .company-desc {
+        font-size: 1.1rem;
+        opacity: 0.95;
+        font-weight: 400;
+    }
+
+    .company-body {
+        padding: var(--card-padding);
+    }
+
+    .company-info {
+        margin-bottom: 2.5rem;
+    }
+
+    .company-info p {
+        margin-bottom: 1.5rem;
+        color: var(--black);
+        line-height: 1.9;
+    }
+
+    .company-info ul {
+        margin-left: 1.5rem;
+        margin-bottom: 2rem;
+        list-style-type: none;
+    }
+
+    .company-info li {
+        margin-bottom: 1rem;
+        position: relative;
+        padding-left: 2rem;
+        line-height: 1.7;
+    }
+
+    .company-info li::before {
+        content: '→';
+        color: var(--emerald-medium);
+        font-weight: 700;
+        position: absolute;
+        left: 0;
+    }
+
+    .company-link {
+        display: inline-block;
+        padding: 1.2rem 2.5rem;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        text-align: center;
+        width: 100%;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        color: var(--white);
+        font-size: 1.1rem;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .rp2 .company-link {
+        background: linear-gradient(145deg, var(--emerald-dark), var(--emerald-medium));
+    }
+
+    .rp3 .company-link {
+        background: linear-gradient(145deg, var(--blue-medium), var(--blue-light));
+    }
+
+    .sqg .company-link {
+        background: linear-gradient(145deg, var(--teal-dark), var(--teal-light));
+    }
+
+    .company-link:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .company-link::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+        z-index: -1;
+    }
+
+    .company-link:hover::after {
+        transform: translateX(100%);
+    }
+
+    .rp2 .company-link {
+        background: linear-gradient(145deg, var(--emerald-dark), var(--emerald-medium));
+    }
+
+    .rp3 .company-link {
+        background: linear-gradient(145deg, var(--blue-medium), var(--blue-light));
+    }
+
+    .company-link::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255,255,255,0.3), transparent);
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+        z-index: -1;
+    }
+
+    .company-link:hover::after {
+        transform: translateX(100%);
+    }
+
+    .social-proof {
+        background-color: rgba(248, 249, 250, 0.95);
+        padding: 6rem 0;
+        margin-top: 4rem;
+        position: relative;
+    }
+
+    .social-proof::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" opacity="0.03"><circle cx="50" cy="50" r="40" fill="none" stroke="%23006040" stroke-width="1"/></svg>');
+    }
+
+    .proof-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        position: relative;
+    }
+
+    .proof-title {
+        text-align: center;
+        font-family: var(--font-alt);
+        font-size: 2.5rem;
+        margin-bottom: 4rem;
+        color: var(--blue-dark);
+        position: relative;
+        display: inline-block;
+    }
+
+    .proof-title::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, var(--emerald-medium), var(--blue-light));
+        border-radius: 2px;
+    }
+
+    .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+    }
+
+    .proof-item {
+        background: var(--white);
+        border-radius: var(--border-radius);
+        padding: 3rem 2rem;
+        box-shadow: var(--box-shadow);
+        text-align: center;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: 1px solid rgba(0,0,0,0.05);
+        position: relative;
+        overflow: hidden;
+        animation: fadeIn 0.6s ease forwards;
+        opacity: 0;
+    }
+
+    .proof-item:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--box-shadow-hover);
+    }
+
+    .proof-item::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, var(--emerald-medium), var(--blue-light));
+    }
+
+    .proof-number {
+        font-family: var(--font-alt);
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: var(--emerald-medium);
+        margin-bottom: 1.5rem;
+        line-height: 1;
+        background: linear-gradient(to right, var(--emerald-medium), var(--blue-light));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .proof-text {
+        color: var(--gray);
+        font-size: 1.2rem;
+    }
+
+    footer {
+        background: linear-gradient(145deg, var(--blue-dark), #001a33);
+        color: var(--white);
+        padding: 8rem 0 4rem;
+        margin-top: 6rem;
+        position: relative;
+    }
+
+    footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" opacity="0.03"><circle cx="50" cy="50" r="40" fill="none" stroke="%23FFFFFF" stroke-width="0.5"/></svg>');
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 4rem;
+        position: relative;
+        z-index: 2;
+    }
+
+    .footer-logo-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-logo-img {
+        height: 60px;
+        width: 60px;
+        margin-right: 20px;
+        filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        alt: "Logo pequeño de Red Neural";
+    }
+
+    .footer-logo {
+        font-family: var(--font-alt);
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(to right, var(--white), var(--silver));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -1px;
+    }
+
+    .footer-logo span {
+        color: var(--emerald-light);
+        -webkit-text-fill-color: var(--emerald-light);
+    }
+
+    .footer-tagline {
+        color: rgba(255,255,255,0.8);
+        line-height: 1.9;
+        margin-top: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .footer-column h3 {
+        font-family: var(--font-alt);
+        margin-bottom: 2rem;
+        position: relative;
+        color: var(--emerald-light);
+        font-size: 1.4rem;
+        padding-bottom: 1rem;
+        letter-spacing: -0.5px;
+    }
+
+    .footer-column h3::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: linear-gradient(to right, var(--emerald-medium), var(--emerald-light));
+        border-radius: 3px;
+    }
+
+    .footer-links {
+        list-style: none;
+    }
+
+    .footer-links li {
+        margin-bottom: 1.2rem;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .footer-links li:hover {
+        transform: translateX(8px);
+    }
+
+    .footer-links a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+        padding: 0.4rem 0;
+    }
+
+    .footer-links a:hover {
+        color: var(--emerald-light);
+    }
+
+    .footer-links li::before {
+        content: '→';
+        position: absolute;
+        left: -25px;
+        opacity: 0;
+        color: var(--emerald-light);
+        transition: all 0.3s ease;
+    }
+
+    .footer-links li:hover::before {
+        opacity: 1;
+        left: -18px;
+    }
+
+    .copyright {
+        grid-column: 1/-1;
+        text-align: center;
+        margin-top: 6rem;
+        padding-top: 3rem;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 0.95rem;
+        color: var(--silver);
+        line-height: 1.6;
+    }
+
+    .feedback-notification {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: linear-gradient(145deg, var(--emerald-medium), var(--emerald-dark));
+        color: #fff;
+        padding: 0;
+        border-radius: var(--border-radius);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        z-index: 10000;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255,255,255,0.2);
+        max-width: 320px;
+        overflow: hidden;
+    }
+
+    .feedback-notification::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 40%);
+        pointer-events: none;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 1200px) {
+        .logo-text { font-size: 3.5rem; }
+    }
+
+    @media (max-width: 992px) {
+        :root {
+            --section-padding: 5rem 0;
+        }
+        .logo-text { font-size: 3rem; }
+        .subtitle { font-size: 1.2rem; }
+        .companies {
+            grid-template-columns: 1fr;
+            margin-top: -3rem;
+        }
+        .company-card {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .logo-container {
+            flex-direction: column;
+        }
+        .logo-img {
+            margin-right: 0;
+            margin-bottom: 25px;
+            height: 100px;
+            width: 100px;
+        }
+        .logo-text { font-size: 2.8rem; }
+        .header-cta {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+        }
+        .company-logo {
+            width: 90px;
+            height: 90px;
+        }
+        .company-name { font-size: 1.8rem; }
+        .footer-logo-container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .footer-logo-img {
+            margin-bottom: 20px;
+            margin-right: 0;
+        }
+    }
+
+    @media (max-width: 576px) {
+        :root {
+            --section-padding: 4rem 0;
+            --card-padding: 2rem;
+        }
+        header { padding: 3.5rem 0; }
+        .logo-text { font-size: 2.4rem; }
+        .subtitle {
+            font-size: 1.1rem;
+            padding: 0 1rem;
+        }
+        .company-body, .company-header { padding: 2rem; }
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        .footer-column { margin-bottom: 2rem; }
+        .proof-item { padding: 2.5rem 1.5rem; }
+        .proof-number { font-size: 3rem; }
+    }
+
+    /* Optimización de animaciones para dispositivos móviles */
+    /* Responsividad del formulario */
+    @media (max-width: 768px) {
+        .modal-content {
+            padding: 1.5rem !important;
+            max-width: 95% !important;
+        }
+        .modal-content h3 {
+            font-size: 1.4rem !important;
+        }
+        .modal-content p {
+            font-size: 0.85rem !important;
+        }
+        .modal-content label {
+            font-size: 0.95rem !important;
+        }
+        .modal-content input, .modal-content textarea {
+            font-size: 0.85rem !important;
+            padding: 0.5rem !important;
+        }
+        .button-container {
+            flex-direction: column !important;
+            gap: 0.5rem !important;
+        }
+        .button-container button {
+            font-size: 0.95rem !important;
+            padding: 0.7rem !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .modal-content {
+            padding: 1rem !important;
+        }
+        .modal-content h3 {
+            font-size: 1.2rem !important;
+        }
+        .modal-content input, .modal-content textarea {
+            font-size: 0.8rem !important;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars-container" aria-hidden="true">
+        <!-- Estrellas generadas dinámicamente por JavaScript -->
+    </div>
+    
+    <div class="main-content">
+        <header>
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="red.jpg" alt="Logo de Red Neural" class="logo-img">
+                    <h1 class="logo-text">RED<span>NEURAL</span></h1>
+                </div>
+                <p class="subtitle">Corporacion RN. Red Neural, C.A transforma ideas en realidades tecnológicas mediante un ecosistema integrado de soluciones avanzadas en desarrollo de software, neuromarketing y computación cuántica.</p>
+                <a href="#contacto" class="header-cta" id="main-cta">Habla con un experto</a>
+            </div>
+        </header>
+        
+        <div class="container">
+            <div class="companies">
+                <div class="company-card rp2" style="--x: 341px; --y: 853.453125px;">
+                    <div class="company-header">
+                        <h2 class="company-name">Nuestros Servicios</h2>
+                        <p class="company-desc">Desarrollo de Software</p>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-info">
+                            <p>Soluciones integrales de desarrollo de software que cubren todo el espectro del mercado tecnológico.</p>
+                            <p><strong>Servicios ofrecidos:</strong></p>
+                            <ul>
+                                <li><strong>Desarrollo Web:</strong> Aplicaciones web responsive, e-commerce, CMS personalizados</li>
+                                <li><strong>Aplicaciones Móviles:</strong> iOS, Android, híbridas con React Native y Flutter</li>
+                                <li><strong>Inteligencia Artificial:</strong> Machine learning, chatbots, visión computacional</li>
+                                <li><strong>Blockchain:</strong> Contratos inteligentes, dApps, NFT marketplaces</li>
+                                <li><strong>Cloud Computing:</strong> Migración a AWS, Azure, Google Cloud</li>
+                                <li><strong>Ciberseguridad:</strong> Auditorías, implementación de protocolos de seguridad</li>
+                                <li><strong>IoT:</strong> Desarrollo de dispositivos conectados y plataformas</li>
+                                <li><strong>Big Data:</strong> Análisis de datos, dashboards interactivos</li>
+                            </ul>
+                        </div>
+                        <button class="company-link" id="software-button">Solicitar cotización</button>
+                    </div>
+                </div>
+
+                <div class="company-card rp3" style="--x: 199.84375px; --y: 43.421875px;">
+                    <div class="company-header">
+                        <img src="rp3.jpg" alt="Logo de Proyecto SAB-IA" style="width: 350px; height: 350px; object-fit: cover; margin: 0 auto 1.5rem; display: block; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 3px solid rgba(255,255,255,0.3);">
+                        <h2 class="company-name">Proyecto SAB-IA</h2>
+                        <p class="company-desc">Ambiente Virtual de Aprendizaje Nivel 5</p>
+                    </div>
+                    <div class="company-body">
+                        <div class="company-info">
+                            <p>Plataforma educativa avanzada con inteligencia artificial integrada para formación profesional y certificación académica.</p>
+                            <p><strong>Certificaciones ofrecidas:</strong></p>
+                            <ul>
+                                <li>Certificaciones de pregrado</li>
+                                <li>Certificaciones de postgrado</li>
+                                <li>Microcertificaciones especializadas</li>
+                                <li>Certificaciones para talentos</li>
+                                <li>Certificaciones para oficios</li>
+                            </ul>
+                            <p><strong>Aval universitario:</strong> Instituto Universitario de Tecnología Juan Pablo Pérez Alfonso <img src="iutepal-logo.jpg" alt="Logo IUTEPAL" style="height: 350px; vertical-align: middle; margin-left: 10px;"></p>
+                        </div>
+                        <button class="company-link" id="sabia-button">Explorar proyecto</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="social-proof">
+            <div class="proof-container">
+                <h2 class="proof-title">En números</h2>
+                <div class="proof-grid">
+                    <div class="proof-item">
+                        <div class="proof-number">150+</div>
+                        <div class="proof-text">Proyectos tecnológicos completados</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-number">98%</div>
+                        <div class="proof-text">Clientes satisfechos</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-number">40+</div>
+                        <div class="proof-text">Países con nuestra tecnología</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Formulario de contacto -->
+    <div id="contact-modal" class="modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10000;">
+        <div class="modal-content" style="background: linear-gradient(145deg, var(--white), var(--silver)); padding: 2rem; border-radius: var(--border-radius); max-width: 700px; width: 95%; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 2px solid var(--emerald-light); position: relative;">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <img src="red.jpg" alt="Logo Corporación Red Neural" style="height: 40px; margin-bottom: 0.5rem;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--blue-dark); font-family: var(--font-alt); font-size: 1.6rem;">Explorar Proyecto SAB-IA</h3>
+                <p style="color: var(--gray); font-size: 0.9rem;">Complete el formulario para recibir información detallada</p>
+            </div>
+            <form id="sabia-form" style="display: grid; grid-template-areas: 'name phone' 'email country' 'interest month' 'birth id' 'message message' 'buttons buttons'; gap: 1rem;">
+                <div style="grid-area: name;">
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Nombre Completo:</label>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: email;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: phone;">
+                    <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" required style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: country;">
+                    <label for="country" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Código de País:</label>
+                    <input type="text" id="country" name="country" placeholder="Ej: +58" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: interest;">
+                    <label for="interest" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Carrera/Microcertificación/Talento de Interés:</label>
+                    <input type="text" id="interest" name="interest" placeholder="Ej: Ingeniería de Software, Microcertificación en IA" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: message;">
+                    <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Mensaje:</label>
+                    <textarea id="message" name="message" rows="2" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box; resize: vertical;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">Estoy interesado en el Proyecto SAB-IA.</textarea>
+                </div>
+                <div style="grid-area: month;">
+                    <label for="month" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Mes para Iniciar:</label>
+                    <select id="month" name="month" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                        <option value="">Seleccionar mes</option>
+                        <option value="Enero">Enero</option>
+                        <option value="Febrero">Febrero</option>
+                        <option value="Marzo">Marzo</option>
+                        <option value="Abril">Abril</option>
+                        <option value="Mayo">Mayo</option>
+                        <option value="Junio">Junio</option>
+                        <option value="Julio">Julio</option>
+                        <option value="Agosto">Agosto</option>
+                        <option value="Septiembre">Septiembre</option>
+                        <option value="Octubre">Octubre</option>
+                        <option value="Noviembre">Noviembre</option>
+                        <option value="Diciembre">Diciembre</option>
+                    </select>
+                </div>
+                <div style="grid-area: birth;">
+                    <label for="birth" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Fecha de Nacimiento:</label>
+                    <input type="date" id="birth" name="birth" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: id;">
+                    <label for="id" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Identificación:</label>
+                    <input type="text" id="id" name="id" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: buttons; display: flex; gap: 1rem; justify-content: space-between;" class="button-container">
+                    <button type="button" id="close-modal" style="flex: 1; padding: 0.8rem; background: linear-gradient(145deg, var(--gray), var(--silver)); color: var(--black); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" onmouseover="this.style.transform = 'translateY(-2px)'" onmouseout="this.style.transform = 'translateY(0)'">Cancelar</button>
+                    <button type="submit" style="flex: 1; padding: 0.8rem; background: linear-gradient(145deg, var(--emerald-medium), var(--emerald-light)); color: var(--white); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" onmouseover="this.style.transform = 'translateY(-2px)'" onmouseout="this.style.transform = 'translateY(0)'">Enviar a WhatsApp</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Formulario de servicios de software -->
+    <div id="software-modal" class="modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10000;">
+        <div class="modal-content" style="background: linear-gradient(145deg, var(--white), var(--silver)); padding: 2rem; border-radius: var(--border-radius); max-width: 700px; width: 95%; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 2px solid var(--emerald-light); position: relative;">
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <img src="red.jpg" alt="Logo Corporación Red Neural" style="height: 40px; margin-bottom: 0.5rem;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--blue-dark); font-family: var(--font-alt); font-size: 1.6rem;">Solicitar Cotización de Software</h3>
+                <p style="color: var(--gray); font-size: 0.9rem;">Complete los detalles para recibir una cotización personalizada</p>
+            </div>
+            <form id="software-form" style="display: grid; grid-template-areas: 'name email' 'phone company' 'project project' 'tech budget' 'deadline message' 'buttons buttons'; gap: 1rem;">
+                <div style="grid-area: name;">
+                    <label for="sw-name" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Nombre Completo:</label>
+                    <input type="text" id="sw-name" name="name" required style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: email;">
+                    <label for="sw-email" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Correo Electrónico:</label>
+                    <input type="email" id="sw-email" name="email" required style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: phone;">
+                    <label for="sw-phone" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Teléfono:</label>
+                    <input type="tel" id="sw-phone" name="phone" required style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: company;">
+                    <label for="sw-company" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Empresa/Organización:</label>
+                    <input type="text" id="sw-company" name="company" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: project;">
+                    <label for="sw-project" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Tipo de Proyecto:</label>
+                    <select id="sw-project" name="project" required style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                        <option value="">Seleccionar tipo</option>
+                        <option value="Web App">Aplicación Web</option>
+                        <option value="Mobile App">Aplicación Móvil</option>
+                        <option value="Desktop App">Aplicación de Escritorio</option>
+                        <option value="E-commerce">Plataforma E-commerce</option>
+                        <option value="AI/ML">Inteligencia Artificial/Machine Learning</option>
+                        <option value="Blockchain">Blockchain/Criptomonedas</option>
+                        <option value="IoT">Internet of Things</option>
+                        <option value="Cloud">Migración a la Nube</option>
+                        <option value="Security">Ciberseguridad</option>
+                        <option value="Other">Otro</option>
+                    </select>
+                </div>
+                <div style="grid-area: tech;">
+                    <label for="sw-tech" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Tecnologías Preferidas:</label>
+                    <input type="text" id="sw-tech" name="tech" placeholder="Ej: React, Node.js, Python" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: budget;">
+                    <label for="sw-budget" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Presupuesto Estimado:</label>
+                    <select id="sw-budget" name="budget" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                        <option value="">Seleccionar rango</option>
+                        <option value="<60">Menos de $60</option>
+                        <option value="60-200">$60 - $200</option>
+                        <option value="200-500">$200 - $500</option>
+                        <option value="500-1000">$500 - $1,000</option>
+                        <option value="1000-5000">$1,000 - $5,000</option>
+                        <option value=">5000">Más de $5,000</option>
+                    </select>
+                </div>
+                <div style="grid-area: deadline;">
+                    <label for="sw-deadline" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Fecha Límite Deseada:</label>
+                    <input type="date" id="sw-deadline" name="deadline" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'">
+                </div>
+                <div style="grid-area: message;">
+                    <label for="sw-message" style="display: block; margin-bottom: 0.5rem; font-weight: 700; color: var(--blue-dark); font-size: 1rem;">Descripción del Proyecto:</label>
+                    <textarea id="sw-message" name="message" rows="3" placeholder="Describe tu proyecto en detalle" style="width: 100%; padding: 0.6rem; border: 2px solid var(--silver); border-radius: 8px; font-size: 0.95rem; transition: border-color 0.3s; box-sizing: border-box; resize: vertical;" onfocus="this.style.borderColor = 'var(--emerald-medium)'" onblur="this.style.borderColor = 'var(--silver)'"></textarea>
+                </div>
+                <div style="grid-area: buttons; display: flex; gap: 1rem; justify-content: space-between;" class="button-container">
+                    <button type="button" id="close-software-modal" style="flex: 1; padding: 0.8rem; background: linear-gradient(145deg, var(--gray), var(--silver)); color: var(--black); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" onmouseover="this.style.transform = 'translateY(-2px)'" onmouseout="this.style.transform = 'translateY(0)'">Cancelar</button>
+                    <button type="submit" style="flex: 1; padding: 0.8rem; background: linear-gradient(145deg, var(--emerald-medium), var(--emerald-light)); color: var(--white); border: none; border-radius: 8px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: transform 0.3s; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" onmouseover="this.style.transform = 'translateY(-2px)'" onmouseout="this.style.transform = 'translateY(0)'">Enviar Cotización</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-column">
+                <div class="footer-logo-container">
+                    <img src="red.jpg" alt="Logo pequeño de Red Neural" class="footer-logo-img">
+                    <div class="footer-logo"><span></span></div>
+                </div>
+                <p class="footer-tagline">Corporacion RN. Red Neural, C.A integrando la excelencia tecnológica con la comprensión humana para crear soluciones que realmente importan.</p>
+            </div>
+            
+
+            
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul class="footer-links">
+                    <li><a href="tel:+584127301566">+584127301566</a></li>
+                    <li><a href="mailto:CORPORACIONREDNEURAL@GMAIL.COM">Corporacionredneural@gmail.com</a></li>
+                    <li><a href="#">Oportunidades laborales</a></li>
+                    <li><a href="#">Soporte técnico</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Recursos</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Blog tecnológico</a></li>
+                    <li><a href="#">Webinars</a></li>
+                    <li><a href="#">Documentación</a></li>
+                    <li><a href="#">Centro de ayuda</a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+                © 2025 Corporacion RN. Red Neural, C.A (RIF: J-506724669). Todos los derechos reservados.<br>
+                Innovando el futuro, hoy.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Optimización del rendimiento
+    document.addEventListener('DOMContentLoaded', function() {
+        // Carga diferida de estrellas
+        requestIdleCallback(createStars);
+        
+        // Efecto de luz en tarjetas
+        initCardLightEffect();
+        
+        // Configuración de botones
+        setupButtons();
+
+        // Configuración del formulario
+        document.getElementById('close-modal').addEventListener('click', hideModal);
+        document.getElementById('sabia-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const country = formData.get('country');
+            const interest = formData.get('interest');
+            const month = formData.get('month');
+            const birth = formData.get('birth');
+            const id = formData.get('id');
+            const message = formData.get('message');
+            const fullMessage = `Hola, soy ${name}. Email: ${email}. Teléfono: ${phone}. Código de país: ${country}. Interés: ${interest}. Mes para iniciar: ${month}. Fecha de nacimiento: ${birth}. Identificación: ${id}. ${message}`;
+            hideModal();
+            sendWhatsApp(fullMessage, 'sabia-button');
+        });
+
+        document.getElementById('close-software-modal').addEventListener('click', hideSoftwareModal);
+        document.getElementById('software-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const company = formData.get('company');
+            const project = formData.get('project');
+            const tech = formData.get('tech');
+            const budget = formData.get('budget');
+            const deadline = formData.get('deadline');
+            const message = formData.get('message');
+            const fullMessage = `Solicitud de cotización. Nombre: ${name}. Email: ${email}. Teléfono: ${phone}. Empresa: ${company}. Tipo de proyecto: ${project}. Tecnologías: ${tech}. Presupuesto: ${budget}. Fecha límite: ${deadline}. Descripción: ${message}`;
+            hideSoftwareModal();
+            sendWhatsApp(fullMessage, 'software-button');
+        });
+
+        // Animaciones con IntersectionObserver
+        setupAnimations();
+    });
+
+    function createStars() {
+        const container = document.getElementById('stars-container');
+        const starCount = 150;
+        
+        // Fragmento para mejor rendimiento
+        const fragment = document.createDocumentFragment();
+        
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            
+            const size = 2 * Math.random() + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = `${100 * Math.random()}%`;
+            star.style.top = `${100 * Math.random()}%`;
+            star.style.setProperty('--opacity', 0.5 * Math.random() + 0.1);
+            star.style.setProperty('--duration', `${3 * Math.random() + 2}s`);
+            
+            fragment.appendChild(star);
+        }
+        
+        container.appendChild(fragment);
+    }
+
+    function initCardLightEffect() {
+        document.querySelectorAll('.company-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--x', `${x}px`);
+                card.style.setProperty('--y', `${y}px`);
+            });
+        });
+    }
+
+   
+
+    function showBeautifulMessage(buttonId) {
+        let messageConfig = {
+            title: "¡Genial decisión!",
+            content: "Estamos conectándote con uno de nuestros expertos en tecnología para brindarte la mejor asesoría personalizada.",
+            icon: "👨‍💻"
+        };
+        
+        // Personalización por tipo de botón
+        switch(buttonId) {
+            case "software-button":
+                messageConfig = {
+                    title: "¡Desarrollo de Software!",
+                    content: "Un experto en desarrollo tecnológico te contactará para entender tus necesidades y proponer la mejor solución de software.",
+                    icon: "💻"
+                };
+                break;
+            case "sabia-button":
+                messageConfig = {
+                    title: "¡Proyecto SAB-IA!",
+                    content: "Descubre nuestro ambiente virtual de aprendizaje con IA de nivel 5, avalado por IUTEPAL. Un experto te contactará para explicarte los detalles.",
+                    icon: "🎓"
+                };
+                break;
+        }
+        
+        const notification = document.createElement('div');
+        notification.className = 'feedback-notification';
+        notification.setAttribute('aria-live', 'polite');
+        notification.innerHTML = `
+            <div style="text-align:center;padding:1rem;">
+                <div style="font-size:2rem;margin-bottom:1rem;">${messageConfig.icon}</div>
+                <h3 style="margin-bottom:0.5rem;color:var(--white);font-family:var(--font-alt)">${messageConfig.title}</h3>
+                <p style="margin-bottom:1.5rem;color:rgba(255,255,255,0.9)">${messageConfig.content}</p>
+                <div style="display:flex;justify-content:center;align-items:center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:8px;">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span>Redirigiendo a WhatsApp...</span>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Animación de entrada
+        setTimeout(() => {
+            notification.style.opacity = "1";
+            notification.style.transform = "translateY(0)";
+        }, 10);
+        
+        // Redirección después de mostrar el mensaje
+        setTimeout(() => {
+            sendWhatsApp(buttonMessages[buttonId] || buttonMessages["main-cta"], buttonId);
+
+            // Animación de salida
+            setTimeout(() => {
+                notification.style.opacity = "0";
+                notification.style.transform = "translateY(20px)";
+                setTimeout(() => notification.remove(), 300);
+            }, 1500);
+        }, 3000);
+    }
+
+    const whatsappNumber = "+584127301566";
+    const buttonMessages = {
+      "main-cta": "¡Hola! Estoy interesado en las soluciones de Corporación Red Neural. ¿Podrían contactarme para más información?",
+      "software-button": "¡Hola! Me interesa el desarrollo de software. ¿Podrían enviarme una cotización para mi proyecto?",
+      "sabia-button": "Hola, me interesa SAB-IA, el ambiente virtual de aprendizaje nivel 5 avalado por IUTEPAL. ¿Pueden darme más información?"
+    };
+
+    function sendWhatsApp(message, buttonId = "general") {
+      const encodedMessage = encodeURIComponent(message);
+      trackConversion(buttonId);
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+      showFeedbackNotification();
+    }
+
+    function trackConversion(buttonId) {
+      console.log(`Conversion tracked for ${buttonId}`);
+      const conversions = JSON.parse(localStorage.getItem("conversions") || "{}");
+      conversions[buttonId] = (conversions[buttonId] || 0) + 1;
+      localStorage.setItem("conversions", JSON.stringify(conversions));
+    }
+
+    function showFeedbackNotification() {
+      const notification = document.createElement('div');
+      notification.className = 'feedback-notification';
+      notification.setAttribute('aria-live', 'polite');
+      notification.innerHTML = `
+        <div style="text-align:center;padding:1rem;">
+          <div style="font-size:2rem;margin-bottom:1rem;">✅</div>
+          <h3 style="margin-bottom:0.5rem;color:var(--white);font-family:var(--font-alt)">Redirigiendo...</h3>
+          <p style="margin-bottom:1.5rem;color:rgba(255,255,255,0.9)">Conectándote con nuestro equipo de expertos.</p>
+          <div style="display:flex;justify-content:center;align-items:center;">
+            <span>Redirigiendo a WhatsApp...</span>
+          </div>
+        </div>
+      `;
+
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        notification.style.opacity = "1";
+        notification.style.transform = "translateY(0)";
+      }, 10);
+
+      setTimeout(() => {
+        notification.style.opacity = "0";
+        notification.style.transform = "translateY(20px)";
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    }
+
+    function setupButtons() {
+        document.querySelectorAll('.company-link, .header-cta').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.tagName === 'A') {
+                    e.preventDefault();
+                }
+                if (this.id === 'sabia-button') {
+                    showModal();
+                } else if (this.id === 'software-button') {
+                    showSoftwareModal();
+                } else {
+                    showBeautifulMessage(this.id || "main-cta");
+                }
+            });
+        });
+    }
+
+    function showModal() {
+        document.getElementById('contact-modal').style.display = 'flex';
+    }
+
+    function hideModal() {
+        document.getElementById('contact-modal').style.display = 'none';
+    }
+
+    function showSoftwareModal() {
+        document.getElementById('software-modal').style.display = 'flex';
+    }
+
+    function hideSoftwareModal() {
+        document.getElementById('software-modal').style.display = 'none';
+    }
+
+    function setupAnimations() {
+        const animateElements = () => {
+            document.querySelectorAll('.company-card, .proof-item, footer').forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.animation = 'fadeIn 0.6s ease forwards';
+                    el.style.opacity = '1';
+                }, 100 * index);
+            });
+        };
+        
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateElements();
+                        this.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            observer.observe(document.querySelector('.companies'));
+        } else {
+            // Fallback para navegadores sin IntersectionObserver
+            animateElements();
+        }
+    }
+    // Crear estrellas dinámicas
+function createStars() {
+  const container = document.getElementById('stars-container');
+  const starCount = 150;
+  
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    
+    // Tamaño aleatorio entre 1px y 3px
+    const size = Math.random() * 2 + 1;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
+    
+    // Posición aleatoria
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
+    
+    // Opacidad aleatoria
+    star.style.setProperty('--opacity', Math.random() * 0.5 + 0.1);
+    
+    // Duración de animación aleatoria
+    star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+    
+    container.appendChild(star);
+  }
+}
+
+// Efecto de luz al mover el mouse en las tarjetas
+function initCardLightEffect() {
+  const cards = document.querySelectorAll('.company-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      card.style.setProperty('--x', `${x}px`);
+      card.style.setProperty('--y', `${y}px`);
+    });
+  });
+}
+
+
+</script>
+</body>
+</html>
